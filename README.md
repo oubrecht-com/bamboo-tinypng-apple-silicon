@@ -58,6 +58,6 @@ The build output is placed in the `bin/` folder (e.g. `bin/Bamboo-darwin-arm64/B
 
 # License
 
-MIT – © 2018 Chris Anselmo, see [LICENSE](./bamboo-master/LICENSE).
+MIT – © 2018 Chris Anselmo, Apple Silicon build © 2026 OUBRECHT.com, see [LICENSE](./bamboo-master/LICENSE).
 
 Bamboo is not affiliated with nor endorsed by Tinify/TinyPNG/TinyJPG.
