@@ -1,0 +1,34 @@
+{
+  "name": "bamboo",
+  "productName": "Bamboo",
+  "version": "1.2.0",
+  "description": "A cross-platform TinyPNG client 🌱🎍",
+  "main": "electron/electron.js",
+  "scripts": {
+    "build": "npm run build.js && npm run build.css && cp src/index.html electron/dist/index.html",
+    "build.js": "esbuild src/assets/scripts/main.js --bundle --platform=node --format=cjs --external:electron --minify --outfile=electron/dist/main.js",
+    "build.css": "sass --no-source-map --style=compressed --silence-deprecation=import src/assets/styles/main.scss electron/dist/main.css",
+    "start": "npm run build && NODE_ENV=development electron .",
+    "build.mac": "npm run build && electron-packager . Bamboo --platform=darwin --arch=arm64 --out=./bin --asar --overwrite --icon=./src/assets/images/bamboo.icns --app-bundle-id=com.christopherwk210.bamboo --ignore=\"^/(src|bin)($|/)\"",
+    "build.win": "npm run build && electron-packager . Bamboo --platform=win32 --arch=x64 --out=./bin --asar --overwrite --icon=./src/assets/images/bamboo.ico --ignore=\"^/(src|bin)($|/)\""
+  },
+  "keywords": [
+    "tinypng",
+    "electron",
+    "image",
+    "compression"
+  ],
+  "author": "Chris Anselmo <christopherwk210@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tinify": "^1.8.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.7.0",
+    "esbuild": "^0.28.2",
+    "feather-icons": "^4.29.0",
+    "sass": "^1.105.1",
+    "vue": "^2.7.16"
+  }
+}
